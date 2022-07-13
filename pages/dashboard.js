@@ -4,6 +4,7 @@ import Identities from "./components/Identities";
 import EarnReputation from "./components/EarnReputation";
 import Settings from "./components/Settings";
 import Navbar from "./components/Navbar";
+import Explorer from "./components/Explorer";
 
 export default function Dashboard() {
   const [menu, setMenu] = useState(1);
@@ -22,12 +23,16 @@ export default function Dashboard() {
         <li>
           <button onClick={() => setMenu(4)}>Settings</button>
         </li>
+        <li>
+          <button onClick={() => setMenu(5)}>Explorer</button>
+        </li>
       </div>
       <div className="ml-5 mt-5 w-5/6">
         {menu == 1 && <Home />}
         {menu == 2 && <Identities />}
         {menu == 3 && <EarnReputation />}
         {menu == 4 && <Settings />}
+        {menu == 5 && <Explorer />}
       </div>
     </div>
   );

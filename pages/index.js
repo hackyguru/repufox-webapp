@@ -114,21 +114,38 @@ export default function Home() {
                 Sign In
               </button>
             ) : (
-              <button
-                className=" bg-white bg-opacity-40 hover:bg-opacity-100 px-3 rounded-md"
-                onClick={() =>
-                  connectAsync({ connector: connectors[0] }).then((res) =>
-                    fetchNonce()
-                  )
-                }
-                disabled={!connectors[0].ready}
-              >
-                Connect to Wallet
-                {!connectors[0].ready && " (unsupported)"}
-                {isLoading &&
-                  connectors[0].id === pendingConnector?.id &&
-                  " (connecting)"}
-              </button>
+              <div>
+                <button
+                  className=" bg-white bg-opacity-40 hover:bg-opacity-100 px-3 rounded-md mr-2"
+                  onClick={() =>
+                    connectAsync({ connector: connectors[0] }).then((res) =>
+                      fetchNonce()
+                    )
+                  }
+                  disabled={!connectors[0].ready}
+                >
+                  Connect to Metamask
+                  {!connectors[0].ready && " (unsupported)"}
+                  {isLoading &&
+                    connectors[0].id === pendingConnector?.id &&
+                    " (connecting)"}
+                </button>
+                <button
+                  className=" bg-white bg-opacity-40 hover:bg-opacity-100 px-3 rounded-md"
+                  onClick={() =>
+                    connectAsync({ connector: connectors[2] }).then((res) =>
+                      fetchNonce()
+                    )
+                  }
+                  disabled={!connectors[2].ready}
+                >
+                  Connect to WalletConnect
+                  {!connectors[2].ready && " (unsupported)"}
+                  {isLoading &&
+                    connectors[2].id === pendingConnector?.id &&
+                    " (connecting)"}
+                </button>
+              </div>
             )}
           </div>
         </div>

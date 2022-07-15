@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function EarnReputation() {
+export default function Statistics() {
   return (
     <div className="mt-2">
       <div className="w-full flex justify-between  pr-6 space-x-5">
-        <h1 className="">Earn reputation</h1>
+        <h1 className="">Statistics</h1>
         <div className="flex space-x-4">
           <div className="bg-[#101010] flex p-3 rounded-xl text-white h-full items-center">
             Reputation score : 37
@@ -28,28 +28,16 @@ export default function EarnReputation() {
           </div>
         </div>
       </div>
-      <div className="mt-5 p-5">
-        <div class="flex flex-wrap -mx-2 overflow-hidden lg:-mx-3 space-x-3">
-          <div class="my-2 px-2 w-full overflow-hidden lg:my-3 lg:px-3 lg:w-1/4 bg-[#101010] h-40">
-            aaa
-          </div>
-
-          <div class="my-2 px-2 w-full overflow-hidden lg:my-3 lg:px-3 lg:w-1/4 bg-[#101010] h-40">
-            aaa
-          </div>
-
-          <div class="my-2 px-2 w-full overflow-hidden lg:my-3 lg:px-3 lg:w-1/4 bg-[#101010] h-40">
-            aaa
-          </div>
-
-          <div class="my-2 px-2 w-full overflow-hidden lg:my-3 lg:px-3 lg:w-1/4 bg-[#101010] h-40">
-            aaa
-          </div>
-
-          <div class="my-2 px-2 w-full overflow-hidden lg:my-3 lg:px-3 lg:w-1/4">
-            aaa
-          </div>
-        </div>
+      <div className="w-full mt-5 text-white">
+        Reputation score graph
+        <br />
+        Rank in leaderboard
+        <br />
+        Votes in majority Side
+        <br />
+        No of Votes
+        <br />
+        Growth/decline in reputation
       </div>
     </div>
   );

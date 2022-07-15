@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Identities() {
+export default function OtherIdentities() {
   return (
     <div className="mt-2">
       <div className="w-full flex justify-between  pr-6 space-x-5">
-        <h1 className="">Social Identities</h1>
+        <h1 className="">Other identities</h1>
         <div className="flex space-x-4">
           <div className="bg-[#101010] flex p-3 rounded-xl text-white h-full items-center">
             Reputation score : 37
@@ -30,11 +30,9 @@ export default function Identities() {
       </div>
       <div className="mt-10">
         <p className="text-white opacity-40">
-          Linking your social identities to your wallet can share your wallet's
-          reputation to your social identities. This can also improve your
-          reputation
+          You can optionally link other web2 identities to your wallet. This was
           <br />
-          score and make your wallet discoverable in web2 platforms.
+          score and make your wallet discoverable in off-chain platforms.
         </p>
         <div className="flex-col space-x-4 mr-5 mt-10">
           <div className="bg-[#101010] w-full flex justify-between p-3 rounded-xl text-white">

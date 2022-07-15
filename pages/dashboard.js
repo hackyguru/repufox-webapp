@@ -8,6 +8,7 @@ import Explorer from "../components/Explorer";
 import Statistics from "../components/Statistics";
 import OtherIdentities from "../components/OtherIdentities";
 import Sidebar from "../components/Sidebar";
+import DataArchieves from "../components/DataArchieves";
 
 export default function Dashboard() {
   const [menu, setMenu] = useState(1);
@@ -225,8 +226,8 @@ export default function Dashboard() {
               </summary>
 
               <nav class="mt-1.5 ml-8 flex flex-col">
-                <a
-                  href=""
+                <button
+                  onClick={() => setMenu(7)}
                   class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   <svg
@@ -245,7 +246,7 @@ export default function Dashboard() {
                   </svg>
 
                   <span class="ml-3 text-sm font-medium">Data archieves</span>
-                </a>
+                </button>
 
                 <a
                   href=""
@@ -268,8 +269,8 @@ export default function Dashboard() {
 
                   <span class="ml-3 text-sm font-medium">Documentation</span>
                 </a>
-                <a
-                  href=""
+                <button
+                  onClick={() => setMenu(8)}
                   class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   <svg
@@ -288,7 +289,7 @@ export default function Dashboard() {
                   </svg>
 
                   <span class="ml-3 text-sm font-medium">Tx Explorer</span>
-                </a>
+                </button>
               </nav>
             </details>
           </div>
@@ -300,7 +301,8 @@ export default function Dashboard() {
           {menu == 4 && <Statistics />}
           {menu == 5 && <EarnReputation />}
           {menu == 6 && <Settings />}
-          {menu == 7 && <Explorer />}
+          {menu == 7 && <DataArchieves />}
+          {menu == 8 && <Explorer />}
         </div>
       </div>
     </div>

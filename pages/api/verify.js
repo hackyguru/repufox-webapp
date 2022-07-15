@@ -1,6 +1,8 @@
 import { withIronSessionApiRoute } from 'iron-session/next'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { SiweMessage } from 'siwe'
+import ironOptions from "../../utils/ironOptions";
+
 
 const handler = async (req, res) => {
   const { method } = req

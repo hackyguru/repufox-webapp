@@ -26,10 +26,11 @@
     "@sindresorhus/is": "*",
     "mkdirp-classic": "*",
     "unzip-stream": "*",
-    "traverse":"*",
+    "traverse": "*",
     "pkg-conf": "*",
     "is-arrayish": "*",
-    "json-parse-better-errors": "*"
+    "json-parse-better-errors": "*",
+    "delayed-stream": "*"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",

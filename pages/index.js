@@ -3,6 +3,7 @@ import { useConnect, useNetwork, useSignMessage } from "wagmi";
 import { useAccount } from "wagmi";
 import Router from "next/router";
 import { SiweMessage } from "siwe";
+import axios from "../utils/axios";
 
 export default function Home() {
   const [isInitializing, setIsInitializing] = useState(true);
@@ -15,19 +16,25 @@ export default function Home() {
     pendingConnector,
   } = useConnect();
 
-  console.log(nonce);
-
   const { address, isConnected } = useAccount();
 
   const { signMessageAsync } = useSignMessage();
   const { chain: activeChain } = useNetwork();
 
   useEffect(() => {
-    if (!isLoading && isInitializing && !isConnected) {
-      setIsInitializing(false);
-    } else if (!isLoading && isConnected && isInitializing && nonce === "") {
-      fetchNonce();
-    }
+    (async () => {
+      if (!isLoading && isInitializing && !isConnected) {
+        setIsInitializing(false);
+      } else if (!isLoading && isConnected && isInitializing && nonce === "") {
+        let { data } = await axios.get("/me");
+
+        if (data.address) {
+          return await Router.push("/dashboard");
+        }
+
+        await fetchNonce();
+      }
+    })();
   }, [isLoading, isConnected]);
 
   const fetchNonce = async () => {

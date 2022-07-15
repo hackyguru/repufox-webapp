@@ -5,12 +5,9 @@ class OrbitInitializer {
   instance = false;
 
   async createInstance() {
-    console.log();
     const ipfsOptions = { repo: "./ipfs" };
-    console.log("CREATING IPFS INSTANCE");
 
     const ipfs = await IPFS_create(ipfsOptions);
-    console.log("OBJECT CREATING");
     return await OrbitDB.createInstance(ipfs, {});
   }
 

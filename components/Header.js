@@ -1,8 +1,11 @@
 import React from "react";
 import axios from "../utils/axios";
 import Router from "next/router";
+import { useDisconnect } from "wagmi";
 
 export default function Header(props) {
+  const { disconnect } = useDisconnect();
+
   return (
     <div className="mt-2">
       <div className="w-full flex justify-between  pr-6 space-x-5">
@@ -15,7 +18,8 @@ export default function Header(props) {
             className="bg-[#101010] p-3 rounded-xl text-white flex space-x-3  h-full items-center"
             onClick={async () => {
               await axios.post("/logout");
-              await Router.push('/')
+              await disconnect();
+              await Router.push("/");
             }}
           >
             <span>{props?.address}</span>

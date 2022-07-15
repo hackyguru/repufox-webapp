@@ -9,13 +9,14 @@ import DataArchieves from "../components/DataArchieves";
 import { useAccount, useDisconnect } from "wagmi";
 import Router from "next/router";
 import Header from "../components/Header";
+import axios from "../utils/axios";
 
 export default function Dashboard() {
   const [isInitializing, setIsInitializing] = useState(true);
   const [menu, setMenu] = useState(1);
 
   const { address, connector, isConnected } = useAccount();
-  const { disconnect } = useDisconnect();
+  const { disconnectAsync } = useDisconnect();
 
   function menuSwitch(title = false) {
     if (!title) {
@@ -60,14 +61,22 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
-    if (connector && isInitializing) {
-      if (!isConnected) {
-        Router.push("/");
-      }
+    (async () => {
+      if (isInitializing) {
+        if (!isConnected) {
+          return await Router.push("/");
+        }
 
-      setIsInitializing(false);
-    }
-  }, [connector, isConnected, isInitializing]);
+        let { data } = await axios.get("/me");
+
+        if (!data.address) {
+          await Router.push("/");
+        }
+
+        setIsInitializing(false);
+      }
+    })();
+  }, [isInitializing]);
 
   if (isInitializing || !isConnected) {
     return <div>Loading....</div>;
@@ -367,7 +376,11 @@ export default function Dashboard() {
         </div>
         <div className="ml-5 mt-5 w-5/6">
           <div>
-            <Header title={menuSwitch(true)} address={address} disconnect={disconnect} />
+            <Header
+              title={menuSwitch(true)}
+              address={address}
+              disconnect={disconnectAsync}
+            />
             {menuSwitch()}
           </div>
         </div>

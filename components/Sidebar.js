@@ -9,7 +9,7 @@ export default function Sidebar() {
 
           <nav class="flex flex-col mt-6 space-y-1">
             <a
-              href=""
+              href="components/Sidebar"
               class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg"
             >
               <svg
@@ -72,7 +72,7 @@ export default function Sidebar() {
 
               <nav class="mt-1.5 ml-8 flex flex-col">
                 <a
-                  href=""
+                  href="components/Sidebar"
                   class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   <svg
@@ -94,7 +94,7 @@ export default function Sidebar() {
                 </a>
 
                 <a
-                  href=""
+                  href="components/Sidebar"
                   class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   <svg
@@ -118,7 +118,7 @@ export default function Sidebar() {
             </details>
 
             <a
-              href=""
+              href="components/Sidebar"
               class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
             >
               <svg
@@ -140,7 +140,7 @@ export default function Sidebar() {
             </a>
 
             <a
-              href=""
+              href="components/Sidebar"
               class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
             >
               <svg
@@ -198,7 +198,7 @@ export default function Sidebar() {
 
               <nav class="mt-1.5 ml-8 flex flex-col">
                 <a
-                  href=""
+                  href="components/Sidebar"
                   class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   <svg
@@ -220,7 +220,7 @@ export default function Sidebar() {
                 </a>
 
                 <a
-                  href=""
+                  href="components/Sidebar"
                   class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   <svg
@@ -271,7 +271,7 @@ export default function Sidebar() {
 
         <div class="sticky inset-x-0 bottom-0 border-t border-gray-100">
           <a
-            href=""
+            href="components/Sidebar"
             class="flex items-center p-4 bg-white hover:bg-gray-50 shrink-0"
           >
             <img

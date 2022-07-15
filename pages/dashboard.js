@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Home from "./components/Home";
-import Identities from "./components/Identities";
-import EarnReputation from "./components/EarnReputation";
-import Settings from "./components/Settings";
-import Navbar from "./components/Navbar";
-import Explorer from "./components/Explorer";
-import Statistics from "./components/Statistics";
-import OtherIdentities from "./components/OtherIdentities";
-import Sidebar from "./components/Sidebar";
+import Home from "../components/Home";
+import Identities from "../components/Identities";
+import EarnReputation from "../components/EarnReputation";
+import Settings from "../components/Settings";
+import Navbar from "../components/Navbar";
+import Explorer from "../components/Explorer";
+import Statistics from "../components/Statistics";
+import OtherIdentities from "../components/OtherIdentities";
+import Sidebar from "../components/Sidebar";
 
 export default function Dashboard() {
   const [menu, setMenu] = useState(1);

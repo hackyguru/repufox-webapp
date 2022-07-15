@@ -30,3 +30,11 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+.env
+
+.idea/
+
+ipfs/
+
+orbitdb/

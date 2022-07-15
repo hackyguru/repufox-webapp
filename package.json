@@ -16,11 +16,20 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "siwe": "^1.1.6",
-    "wagmi": "^0.5.9"
+    "wagmi": "^0.5.9",
     "axios": "^0.27.2",
     "ipfs": "^0.58.0",
     "orbit-db": "^0.28.6",
-    "orbit-db-io": "^1.0.2"
+    "orbit-db-io": "^1.0.2",
+    "peek-stream": "*",
+    "is-gzip": "*",
+    "@sindresorhus/is": "*",
+    "mkdirp-classic": "*",
+    "unzip-stream": "*",
+    "traverse":"*",
+    "pkg-conf": "*",
+    "is-arrayish": "*",
+    "json-parse-better-errors": "*"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",

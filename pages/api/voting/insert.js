@@ -5,12 +5,13 @@ import Helper from "../../../utils/helpers";
 export default async function handler(req, res) {
   let data = {
     _id: Helper.random(32),
-    wallet: Wallet.getWallet(),
+    // wallet: Wallet.getWallet(),
     site: req.query.site,
+    score: req.query.score,
   };
   res.status(200).json({
     status: "success",
-    log: await DomainVoting.insertLog(data),
+    // log: await DomainVoting.insertLog(data),
     docs: await DomainVoting.insert(data),
   });
 }

@@ -46,13 +46,7 @@ export default function Home() {
 
       {!isSearched ? (
         <div></div>
-      ) : !votes.length ? (
-        <div>No votes has been registered yet on this site {site}</div>
-      ) : (
-        <div>
-          Received {votes.length} votes on this site {site}
-        </div>
-      )}
+      ) : <div>Received {votes.score} for this website</div>}
     </div>
   );
 }

@@ -14,6 +14,7 @@ import axios from "../utils/axios";
 export default function Dashboard() {
   const [isInitializing, setIsInitializing] = useState(true);
   const [menu, setMenu] = useState(1);
+  const [addressDetails, setAddressDetails] = useState({});
 
   const { address, connector, isConnected } = useAccount();
   const { disconnectAsync } = useDisconnect();
@@ -70,8 +71,10 @@ export default function Dashboard() {
         let { data } = await axios.get("/me");
 
         if (!data.address) {
-          await Router.push("/");
+          return await Router.push("/");
         }
+
+        setAddressDetails(data?.details);
 
         setIsInitializing(false);
       }
@@ -380,6 +383,7 @@ export default function Dashboard() {
               title={menuSwitch(true)}
               address={address}
               disconnect={disconnectAsync}
+              reputation={addressDetails?.countTxs}
             />
             {menuSwitch()}
           </div>

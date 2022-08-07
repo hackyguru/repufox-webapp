@@ -4,6 +4,7 @@ import { useAccount } from "wagmi";
 import Router from "next/router";
 import { SiweMessage } from "siwe";
 import axios from "../utils/axios";
+import Explorer from "../utils/explorer";
 
 export default function Home() {
   const [isInitializing, setIsInitializing] = useState(true);
@@ -70,6 +71,7 @@ export default function Home() {
         },
         body: JSON.stringify({ message, signature }),
       });
+
       if (!verifyRes.ok) {
         throw new Error("Error verifying message");
       }
@@ -132,11 +134,7 @@ export default function Home() {
                 </button>
                 <button
                   className=" bg-white bg-opacity-40 hover:bg-opacity-100 px-3 rounded-md"
-                  onClick={() =>
-                    connectAsync({ connector: connectors[2] }).then((res) =>
-                      fetchNonce()
-                    )
-                  }
+                  onClick={() => connectAsync({ connector: connectors[2] })}
                   disabled={!connectors[2].ready}
                 >
                   Connect to WalletConnect

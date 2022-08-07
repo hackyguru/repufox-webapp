@@ -30,4 +30,8 @@ export default class Base {
   static async all() {
     return await db.get("");
   }
+
+  static async delete(key) {
+    return await db.del(key)
+  }
 }

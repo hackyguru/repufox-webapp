@@ -3,7 +3,7 @@ import Base from "./base";
 
 export default class BaseLog extends Base {
   static async insertLog(data) {
-    await db.add(data, { pin: true });
+    return await db.add(data, { pin: true });
   }
 
   static async findLog(hash) {

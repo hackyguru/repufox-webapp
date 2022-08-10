@@ -2,8 +2,6 @@ import OrbitInitializer from "./orbitInitializer";
 
 const orbitDb = await OrbitInitializer.getInstance();
 
-console.log(orbitDb);
-
 const options = {
   // Give write access to everyone
   accessController: {

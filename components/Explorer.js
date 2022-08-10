@@ -25,7 +25,7 @@ export default function Explorer() {
       <button onClick={() => search()}>Search</button>
       <br />
       {isSearched && (
-        <div>{data?.hash ? JSON.stringify(data.payload) : "Invalid Hash"}</div>
+        <div>{data?.hash ? JSON.stringify(data.payload.value) : "Invalid Hash"}</div>
       )}
     </div>
   );
